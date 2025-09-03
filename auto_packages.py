@@ -29,7 +29,6 @@ def main():
         "git",
         "mariadb-server",
         "postgresql-server",
-        "mongodb",
         "httpd",
         "nginx",
         "php",
@@ -57,11 +56,8 @@ def main():
     print("Paketler kuruluyor...")
     run_cmd("dnf install -y " + " ".join(packages))
 
-    print("SSH servisi başlatılıyor ve otomatik açılması sağlanıyor...")
-    run_cmd("systemctl start sshd")
-    run_cmd("systemctl enable sshd")
-
     print("Kurulum tamamlandı.")
 
 if __name__ == "__main__":
     main()
+
